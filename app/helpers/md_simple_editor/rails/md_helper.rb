@@ -1,11 +1,10 @@
 module MdSimpleEditor
   module Rails
     module MdHelper
-      FontAwesome::Rails::IconHelper
 
       def md_simple_editor(klass='')
         @md_builder = MdBuilder.new(klass)
-        content_tag(:div, :id => 'md-editor') do
+        content_tag(:div, :id => "md-editor", :class => "md-editor") do
           content_tag(:div, :class => 'btn-toolbar', role: 'toolbar') do
             header_tags + text_tools + link_and_image_tools +
                 content_tag(:div, class: 'btn-group pull-righ') do
@@ -48,48 +47,60 @@ module MdSimpleEditor
         end
       end
 
-      def link_and_image_tools
-        content_tag(:div, :class => 'btn-group') do
-          button_tag(:type => 'button', :class => "#{@md_builder.default_class} md_link") do
-            fa_icon 'link'
-          end +
-              button_tag(:type => 'button', :class => "#{@md_builder.default_class} md_camera-retro") do
-                fa_icon 'camera-retro'
-              end
-        end
-      end
+			def link_and_image_tools
+				content_tag(:div, :class => 'btn-group') do
+					button_tag(:type => 'button', :class => "#{@md_builder.default_class} md_link") do
+						fa_icon 'link'
+					end +
+					button_tag(:type => 'button', :class => "#{@md_builder.default_class} md_camera-retro") do
+						fa_icon 'camera-retro'
+					end
+				end
+			end
 
       def text_tools
         content_tag(:div, :class => 'btn-group') do
-          button_tag(type: 'button', class: "#{@md_builder.default_class} md_italic") do
-            fa_icon 'italic'
-          end +
-              button_tag(type: 'button', class: "#{@md_builder.default_class} md_bold") do
-                fa_icon 'bold'
-              end +
-              button_tag(:type => 'button', class: "#{@md_builder.default_class} md_list-ul") do
-                fa_icon 'list-ul'
-              end +
-              button_tag(:type => 'button', class: "#{@md_builder.default_class} md_list-ol") do
-                fa_icon 'list-ol'
-              end +
-              button_tag(:type => 'button', class: "#{@md_builder.default_class} md_indent") do
-                fa_icon 'indent'
-              end +
-              button_tag(:type => 'button', class: "#{@md_builder.default_class} md_underline") do
-                fa_icon 'underline'
-              end +
-              button_tag(:type => 'button', class: "#{@md_builder.default_class} md_table") do
-                fa_icon 'table'
-              end +
-              button_tag(:type => 'button', class: "#{@md_builder.default_class} md_square") do
-                fa_icon 'square'
-              end +
-              button_tag(:type => 'button', class: "#{@md_builder.default_class} md_minus") do
-                fa_icon 'minus'
-              end
-        end
-      end
-    end
-  end
+					button_tag(type: 'button', class: "#{@md_builder.default_class} md_italic") do
+						fa_icon 'italic'
+					end +
+					button_tag(type: 'button', class: "#{@md_builder.default_class} md_bold") do
+						fa_icon 'bold'
+					end +
+					button_tag(:type => 'button', :class => "btn btn-default md_text_specific_color") do
+						fa_icon "font"
+					end +
+					button_tag(:type => 'button', class: "#{@md_builder.default_class} md_list-ul") do
+						fa_icon 'list-ul'
+					end +
+					button_tag(:type => 'button', class: "#{@md_builder.default_class} md_list-ol") do
+						fa_icon 'list-ol'
+					end +
+					button_tag(:type => 'button', class: "#{@md_builder.default_class} md_indent") do
+						fa_icon 'indent'
+					end +
+					button_tag(:type => 'button', class: "#{@md_builder.default_class} md_underline") do
+						fa_icon 'underline'
+					end +
+					button_tag(:type => 'button', class: "#{@md_builder.default_class} md_table") do
+						fa_icon 'table'
+					end +
+					button_tag(:type => 'button', class: "#{@md_builder.default_class} md_square") do
+						fa_icon 'square'
+					end +
+					button_tag(:type => 'button', :class => "btn btn-default md_terminal") do
+						fa_icon "terminal"
+					end +
+					button_tag(:type => 'button', :class => "btn btn-default md_minus") do
+						fa_icon "minus"
+					end +
+					button_tag(:type => 'button', :class => "btn btn-default md_external_link_block") do
+						fa_icon("external-link-square")
+					end +
+					button_tag(:type => 'button', :class => "btn btn-default md_notice_block") do
+						fa_icon("exclamation-circle")
+					end
+				end
+			end
+		end
+	end
 end
