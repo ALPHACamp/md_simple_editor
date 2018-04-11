@@ -6,11 +6,11 @@ require 'md_simple_editor/version'
 Gem::Specification.new do |spec|
   spec.name          = 'md_simple_editor'
   spec.version       = MdSimpleEditor::VERSION
-  spec.authors       = ['Ruben Espinosa']
-  spec.email         = ['rderoldan1@gmail.com']
+  spec.authors       = ['JosephMG']
+	spec.email         = ['joseph780116.mg@gmail.com']
   spec.description   = %q{Simple editor for markdown and rails}
   spec.summary       = %q{Simple editor for markdown and rails}
-  spec.homepage      = 'http://rderoldan1.github.io/md_simple_editor/'
+  spec.homepage      = "https://github.com/josephMG/md_simple_editor"
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
