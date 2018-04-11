@@ -59,7 +59,7 @@ md_simple_editor = () ->
               "\n![Alt](https://www.google.com.co/images/srpr/logo11w.png)\n"
             else if option == 'md_external_link_block'
               "<div class='external-link-block'>
-              \n\t<h5>延伸閱讀</h5>
+              \n\t<h5>Further reading</h5>
               \n\t<ul>
               \n\t\t<li><a target='_blank' href='Your link here'>Text to display</a></li>
               \n\t</ul>
